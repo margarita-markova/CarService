@@ -24,8 +24,6 @@ public:
 
     void setIsSealed(bool isSealed);
 
-    void GenerateFuel();
-
     virtual ~FuelSystem();
 };
 

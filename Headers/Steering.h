@@ -20,8 +20,6 @@ public:
     int getBacklash() const;
 
     void setBacklash(int backlash);
-
-    void GenerateSteering();
 };
 
 #endif //AUTOSERVICE_STEERING_H

@@ -5,11 +5,21 @@
 #ifndef AUTOSERVICE_AUTOSERVICE_H
 #define AUTOSERVICE_AUTOSERVICE_H
 
-//enum sostoyanie
+#include "Auto.h"
+#include <list>
+#include <iterator>
+
+enum status {waiting, in_progress, finished};
 
 class AutoService {
+private:
+    bool isDetails();
+    list <Auto> garage;
+
 public:
     AutoService();
+
+
 
     virtual ~AutoService();
 };

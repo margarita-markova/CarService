@@ -15,13 +15,9 @@ private:
 public:
     Wheel();
 
-    float getHeightProtector() const;
+    float getHeightProtector();
 
     void setHeightProtector(float height_protector);
-
-    void GenerateWheel(); //random values
-
-    void RepareWheel(); //set needed values
 
     virtual ~Wheel();
 };

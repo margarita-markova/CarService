@@ -18,7 +18,3 @@ int Brake::getSkewProcent() const {
 void Brake::setSkewProcent(int skew_procent) {
     Brake::skew_procent = skew_procent;
 }
-
-void Brake::GenerateBrake() {
-    this->setSkewProcent(Utils::GenerateInt(100));
-}

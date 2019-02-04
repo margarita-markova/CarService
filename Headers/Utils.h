@@ -9,8 +9,8 @@
 class Utils {
 public:
     static bool GenerateBool();
+
     static int GenerateInt(int border);
-    static float GenerateFloat(float border);
 };
 
 

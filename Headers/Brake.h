@@ -19,8 +19,6 @@ public:
 
     void setSkewProcent(int skew_procent);
 
-    void GenerateBrake();
-
     virtual ~Brake();
 };
 

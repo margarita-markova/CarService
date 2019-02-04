@@ -27,7 +27,3 @@ void FuelSystem::setVolume(int volume) {
     FuelSystem::volume = volume;
 }
 
-void FuelSystem::GenerateFuel() {
-    this->setIsSealed(Utils::GenerateBool());
-    this->setVolume(Utils::GenerateInt(100));
-}

@@ -20,8 +20,4 @@ void Steering::setBacklash(int backlash) {
     Steering::backlash = backlash;
 }
 
-void Steering::GenerateSteering() {
-    this->setBacklash(Utils::GenerateInt(100));
-}
-
 

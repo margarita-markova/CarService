@@ -19,8 +19,6 @@ public:
 
     void setIsClean(bool isClean);
 
-    void GenerateHeadlights();
-
     virtual ~Headlights();
 };
 

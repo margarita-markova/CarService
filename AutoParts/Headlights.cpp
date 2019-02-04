@@ -19,6 +19,3 @@ void Headlights::setIsClean(bool isClean) {
     Headlights::isClean = isClean;
 }
 
-void Headlights::GenerateHeadlights() {
-    this->Headlights::setIsClean(Utils::GenerateBool());
-}

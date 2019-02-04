@@ -3,6 +3,7 @@
 //
 
 #include "Headers/Auto.h"
+#include "Headers/Utils.h"
 
 //методы замены данных в структуре - это сет
 
@@ -10,53 +11,57 @@ void Auto::AutoParts::ConvertToJson() {
     //TODO: вывод "Конвертировано. Местоположение файла и название. Хотите посмотреть результат Д/н"
 }
 
-Auto::AutoParts::AutoParts() {
-   GenerateStructValues();
-}
+Auto::AutoParts::AutoParts() {}
 
-Auto::Auto(const string &color, int number, const string &model) : color(color), number(number), model(model) {
- AutoParts auto_parts;
-}
+Auto::Auto(const string &color, int number, const string &model) : color(color), number(number), model(model) {}
 
 void Auto::getStatistics() {
 
 }
 
-const string &Auto::getColor() const {
-    return color;
+const Auto::AutoParts &Auto::getParts() const {
+    return parts;
 }
 
-void Auto::setColor(const string &color) {
-    Auto::color = color;
+//void Auto::setParts(const Auto::AutoParts &parts) {
+//    Auto::parts = parts;
+//}
+
+const string &Auto::getColor() const {
+    return color;
 }
 
 int Auto::getNumber() const {
     return number;
 }
 
-void Auto::setNumber(int number) {
-    Auto::number = number;
-}
-
 const string &Auto::getModel() const {
     return model;
 }
 
-void Auto::setModel(const string &model) {
-    Auto::model = model;
+void Auto::GenerateWheel() {
+    for (int i = 0; i < 4; i++) {
+        this->parts.wheel[i].setHeightProtector(Utils::GenerateInt(10));
+    }
+}
+
+void Auto::GenerateSteering() {
+    this->parts.steering.setBacklash(Utils::GenerateInt(100));
+}
+
+void Auto::GenerateHeadlights() {
+    this->parts.headlights.setIsClean(Utils::GenerateBool());
+}
+
+void Auto::GenerateFuelSystem() {
+    this->parts.fuel_system.setVolume(Utils::GenerateInt(100));
+    this->parts.fuel_system.setIsSealed(Utils::GenerateBool());
+}
+
+void Auto::GenerateBrake() {
+    this->parts.brake.setSkewProcent(Utils::GenerateInt(40));
 }
 
 Auto::~Auto() {
 
-}
-
-void Auto::AutoParts::GenerateStructValues() {
-
-    for (int i = 0; i < 4; i++) {
-        this->wheel[i].GenerateWheel();
-    }
-    this->headlights.GenerateHeadlights();
-    this->fuel_system.GenerateFuel();
-    this->steering.GenerateSteering();
-    this->brake.GenerateBrake();
 }

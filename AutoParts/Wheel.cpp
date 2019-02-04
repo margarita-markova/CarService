@@ -11,19 +11,10 @@ Wheel::~Wheel() {
 
 }
 
-float Wheel::getHeightProtector() const {
+float Wheel::getHeightProtector() {
     return height_protector;
 }
 
 void Wheel::setHeightProtector(float height_protector) {
     Wheel::height_protector = height_protector;
 }
-
-void Wheel::GenerateWheel() {
-    this->setHeightProtector(Utils::GenerateInt(10));
-}
-
-void Wheel::RepareWheel() {
-
-}
-

@@ -20,7 +20,8 @@ private:
     int number;
     string model;
 public:
-    struct AutoParts {
+    class AutoParts {
+    public:
         Wheel wheel[4];
         Brake brake;
         FuelSystem fuel_system;
@@ -32,10 +33,22 @@ public:
 
         //TODO: деструктор для элементов структуры
     };
+private:
+    AutoParts parts;
 
     void getStatistics(); //получение общей информации каждого элемента структуры
 
     //TODO: список элементов для замены или целых
+
+    void GenerateWheel(); //random values
+
+    void GenerateSteering();
+
+    void GenerateHeadlights();
+
+    void GenerateFuelSystem();
+
+    void GenerateBrake();
 
     Auto(const string &color, int number, const string &model);
 
@@ -43,15 +56,13 @@ public:
 
     const string &getColor() const;
 
-    void setColor(const string &color);
-
     int getNumber() const;
-
-    void setNumber(int number);
 
     const string &getModel() const;
 
-    void setModel(const string &model);
+    const AutoParts &getParts() const;
+
+    //void setParts(const AutoParts &parts);
 
 };
 

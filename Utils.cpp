@@ -3,6 +3,7 @@
 //
 
 #include "Headers/Utils.h"
+#include "Headers/Auto.h"
 #include <random>
 #include <functional>
 
@@ -22,7 +23,7 @@ int Utils::GenerateInt(int border) {
     return (rand() % border);
 }
 
-//float Utils::GenerateFloat(float border) {
-//    srand(time(NULL));
-//    return ((rand() % (int)(border * 10)) / 10);
-//}
+
+
+
+
