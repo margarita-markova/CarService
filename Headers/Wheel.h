@@ -6,6 +6,7 @@
 #define AUTOSERVICE_WHEEL_H
 
 #include <string>
+//#include "ThorSerialize/JsonThor.h"
 
 using namespace std;
 

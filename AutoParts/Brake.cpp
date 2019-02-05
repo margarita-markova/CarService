@@ -11,7 +11,7 @@ Brake::~Brake() {
 
 }
 
-int Brake::getSkewProcent() const {
+int Brake::getSkewProcent() {
     return skew_procent;
 }
 

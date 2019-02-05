@@ -15,7 +15,7 @@ private:
 public:
     Brake();
 
-    int getSkewProcent() const;
+    int getSkewProcent();
 
     void setSkewProcent(int skew_procent);
 

@@ -20,7 +20,7 @@ public:
 
     void setVolume(int volume);
 
-    bool isIsSealed() const;
+    bool getIsSealed() const;
 
     void setIsSealed(bool isSealed);
 

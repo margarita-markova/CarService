@@ -11,7 +11,7 @@ FuelSystem::~FuelSystem() {
 
 }
 
-bool FuelSystem::isIsSealed() const {
+bool FuelSystem::getIsSealed() const {
     return isSealed;
 }
 

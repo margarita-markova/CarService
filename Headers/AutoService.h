@@ -8,18 +8,38 @@
 #include "Auto.h"
 #include <list>
 #include <iterator>
+#include <map>
 
-enum status {waiting, in_progress, finished};
+enum status {without_problems, waiting, in_progress, finished};
 
 class AutoService {
 private:
-    bool isDetails();
-    list <Auto> garage;
+    bool isDetails;
+    list <Auto> clients;
+    map<Auto, status> garage_journal;
+
+protected:
+    bool getIsDetails() const;
+
+    void setIsDetails(bool isDetails);
 
 public:
+
     AutoService();
 
+    void InspectCar();
 
+    bool CheckDetails();
+
+    void RepairWheel(Auto &car, int num);
+
+    void RepairSteering(Auto &car);
+
+    void RepairHeadlights(Auto &car);
+
+    void RepairFuelSystem(Auto &car);
+
+    void RepairBrake(Auto &car);
 
     virtual ~AutoService();
 };
