@@ -1,6 +1,8 @@
-//
-// Created by dev on 4.2.19.
-//
+/**
+ * @author Margarita Markova
+ * @date 4.2.19
+ * @class Auto
+ */
 
 #ifndef AUTOSERVICE_AUTO_H
 #define AUTOSERVICE_AUTO_H

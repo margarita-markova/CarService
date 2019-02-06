@@ -1,6 +1,8 @@
-//
-// Created by dev on 4.2.19.
-//
+/**
+ * @author Margarita Markova
+ * @date 4.2.19
+ * @class Steering
+ */
 
 #ifndef AUTOSERVICE_STEERING_H
 #define AUTOSERVICE_STEERING_H

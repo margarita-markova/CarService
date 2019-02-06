@@ -1,6 +1,8 @@
-//
-// Created by dev on 4.2.19.
-//
+/**
+ * @author Margarita Markova
+ * @date 4.2.19
+ * @class Auto
+ */
 
 #include "Headers/Auto.h"
 #include "Headers/Utils.h"
@@ -10,62 +12,81 @@
 
 using namespace std;
 
-//методы замены данных в структуре - это сет
-
 Auto::AutoParts::AutoParts() {}
 
 Auto::AutoParts::~AutoParts() {
 
 }
 
+/**
+ * При создании объекта машины автоматически генерируются значения AutoParts
+ * @param color
+ * @param number
+ * @param model
+ */
 Auto::Auto(const string &color, int number, const string &model) : color(color), number(number), model(model) {
+    if (DEBUG_MODE) cout <<__PRETTY_FUNCTION__<< " " << color << " " << number << " " << model << endl;
     this->GenerateStruct();
 }
 
 Auto::AutoParts &Auto::getParts() {
+    if (DEBUG_MODE) cout <<__PRETTY_FUNCTION__<< endl;
     return parts;
 }
 
 const string &Auto::getColor() const {
+    if (DEBUG_MODE) cout <<__PRETTY_FUNCTION__<< endl;
     return color;
 }
 
 int Auto::getNumber() const {
+    if (DEBUG_MODE) cout <<__PRETTY_FUNCTION__<< endl;
     return number;
 }
 
 const string &Auto::getModel() const {
+    if (DEBUG_MODE) cout <<__PRETTY_FUNCTION__<< endl;
     return model;
 }
 
+/**
+ * Методы GenerateXXX - генерация рандомных значений для AutoParts
+ */
 void Auto::GenerateWheel() {
+    if (DEBUG_MODE) cout <<__PRETTY_FUNCTION__<< endl;
     for (int i = 0; i < 4; i++) {
         this->parts.wheel[i].setHeightProtector(Utils::GenerateInt(max_protector_height));
     }
 }
 
 void Auto::GenerateSteering() {
+    if (DEBUG_MODE) cout <<__PRETTY_FUNCTION__<< endl;
     this->parts.steering.setBacklash(Utils::GenerateInt(max_backlash));
 }
 
 void Auto::GenerateHeadlights() {
+    if (DEBUG_MODE) cout <<__PRETTY_FUNCTION__<< endl;
     this->parts.headlights.setIsClean(Utils::GenerateBool());
 }
 
 void Auto::GenerateFuelSystem() {
+    if (DEBUG_MODE) cout <<__PRETTY_FUNCTION__<< endl;
     this->parts.fuel_system.setVolume(Utils::GenerateInt(max_volume));
     this->parts.fuel_system.setIsSealed(Utils::GenerateBool());
 }
 
 void Auto::GenerateBrake() {
+    if (DEBUG_MODE) cout <<__PRETTY_FUNCTION__<< endl;
     this->parts.brake.setSkewProcent(Utils::GenerateInt(max_skew));
 }
 
 Auto::~Auto() {
+    if (DEBUG_MODE) cout <<__PRETTY_FUNCTION__<< endl;
 
 }
 
 void Auto::GenerateStruct() {
+    if (DEBUG_MODE) cout <<__PRETTY_FUNCTION__<< endl;
     this->GenerateSteering();
     this->GenerateHeadlights();
     this->GenerateWheel();
@@ -73,7 +94,11 @@ void Auto::GenerateStruct() {
     this->GenerateBrake();
 }
 
+/**
+ * Получение информации о машине
+ */
 void Auto::GetCarInfo() {
+    if (DEBUG_MODE) cout <<__PRETTY_FUNCTION__<< endl;
     cout << "Statistics " << endl;
     cout << "Model: " << this->getModel() << endl;
     cout << "Color: " << this->getColor() << endl;
@@ -88,5 +113,8 @@ void Auto::GetCarInfo() {
 }
 
 Auto* Auto::getObject() {
+    if (DEBUG_MODE) cout <<__PRETTY_FUNCTION__<< endl;
     return this;
 }
+
+

@@ -1,6 +1,8 @@
-//
-// Created by dev on 4.2.19.
-//
+/**
+ * @author Margarita Markova
+ * @date 4.2.19
+ * @class Utils - вспомогательный класс, предоставляющий статические методы и переменные
+ */
 
 #include "../Headers/Utils.h"
 #include "../Headers/Auto.h"
@@ -13,21 +15,34 @@
 
 using namespace std;
 
+/**
+ * Методы GenerateXXX - для генерации рандомного значения определенного типа с определенным диапазоном
+ * значений случайных чисел
+ */
 bool Utils::GenerateBool() {
+    if (DEBUG_MODE) cout <<__PRETTY_FUNCTION__<< endl;
     return GenerateInt(0, 1);
 }
 
 int Utils::GenerateInt(int border) {
+    if (DEBUG_MODE) cout <<__PRETTY_FUNCTION__<< " " << border << endl;
     return GenerateInt(0, border);
 }
 
 int Utils::GenerateInt(int left, int right) {
+    if (DEBUG_MODE) cout <<__PRETTY_FUNCTION__<< " " << left << " " << right << endl;
     std::random_device rd;
     std::uniform_int_distribution<int> distribution(left, right);
     return distribution(rd);
 }
 
+/**
+ * Dummy Json converter - по условию необходимо поддерживать конвертацию структуры AutoParts в json
+ * Метод записывает результат работы в файл, позволяет пользователю просмотреть результат в консоли
+ * @param garage - список объектов Auto для получения структур AutoParts
+ */
 void Utils::ConvertToJson(list<Auto> &garage) {
+    if (DEBUG_MODE) cout <<__PRETTY_FUNCTION__<< endl;
     auto it = garage.begin();
     ofstream myfile;
     myfile.open("autoparts.json");
@@ -71,12 +86,6 @@ void Utils::ConvertToJson(list<Auto> &garage) {
         }
         in.close();
     }
-}
-
-template<class T>
-string Utils::GetClassName(T &tclass) {
-    string class_name = typeid(tclass).name();
-    return class_name;//class_name.substr(1, class_name.size()-1);
 }
 
 

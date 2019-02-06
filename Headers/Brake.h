@@ -1,6 +1,8 @@
-//
-// Created by dev on 4.2.19.
-//
+/**
+ * @author Margarita Markova
+ * @date 4.2.19
+ * @class Brake
+ */
 
 #ifndef AUTOSERVICE_BRAKE_H
 #define AUTOSERVICE_BRAKE_H

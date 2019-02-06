@@ -1,6 +1,8 @@
-//
-// Created by dev on 4.2.19.
-//
+/**
+ * @author Margarita Markova
+ * @date 4.2.19
+ * @class Utils
+ */
 
 #ifndef AUTOSERVICE_UTILS_H
 #define AUTOSERVICE_UTILS_H
@@ -20,6 +22,8 @@ static int max_backlash = 10;
 static int max_skew = 40;
 static int max_volume = 100;
 static int max_protector_height = 10;
+
+static bool DEBUG_MODE = true;
 
 class Utils {
 public:

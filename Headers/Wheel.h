@@ -1,24 +1,25 @@
-//
-// Created by dev on 4.2.19.
-//
+/**
+ * @author Margarita Markova
+ * @date 4.2.19
+ * @class Wheel
+ */
 
 #ifndef AUTOSERVICE_WHEEL_H
 #define AUTOSERVICE_WHEEL_H
 
 #include <string>
-//#include "ThorSerialize/JsonThor.h"
 
 using namespace std;
 
 class Wheel {
 private:
-    int height_protector; //min 1.6 mm
+    int height_protector;
 public:
     Wheel();
 
     int getHeightProtector();
 
-    void setHeightProtector(float height_protector);
+    void setHeightProtector(int height_protector);
 
     virtual ~Wheel();
 };

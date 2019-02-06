@@ -1,6 +1,8 @@
-//
-// Created by dev on 4.2.19.
-//
+/**
+ * @author Margarita Markova
+ * @date 4.2.19
+ * @class Autoservice
+ */
 
 #ifndef AUTOSERVICE_AUTOSERVICE_H
 #define AUTOSERVICE_AUTOSERVICE_H
@@ -10,7 +12,7 @@
 #include <iterator>
 #include <map>
 
-enum status {without_problems, waiting, in_progress, finished};
+enum status {without_problems, waiting, finished};
 
 class AutoService {
 private:
@@ -27,7 +29,7 @@ public:
 
     AutoService();
 
-    AutoService(char *filename);
+    AutoService(string filename);
 
     list <Auto> &getClients();
 
