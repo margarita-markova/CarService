@@ -35,6 +35,8 @@ protected:
 private:
     AutoParts parts;
 public:
+    Auto* getObject();
+
     void GetCarInfo();
 
     void GenerateWheel(); //random values

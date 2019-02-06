@@ -12,11 +12,11 @@ using namespace std;
 
 class Wheel {
 private:
-    float height_protector; //min 1.6 mm
+    int height_protector; //min 1.6 mm
 public:
     Wheel();
 
-    float getHeightProtector();
+    int getHeightProtector();
 
     void setHeightProtector(float height_protector);
 

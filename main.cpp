@@ -1,5 +1,6 @@
 #include <iostream>
 #include <list>
+#include <zconf.h>
 #include "Headers/Utils.h"
 #include "Headers/Auto.h"
 
@@ -16,7 +17,7 @@ int main() {
     //&car = *car;
     //cout << Utils::GetClassName((*car).getParts().brake);
 
-   // Utils::ConvertToJson(garage);
+    Utils::ConvertToJson(garage);
    // string t = typeid(car->getParts().wheel[1]).name();
    // cout << t.substr(1, t.size()-1);
    // cout << typeid(car->getParts().wheel[1]).name();

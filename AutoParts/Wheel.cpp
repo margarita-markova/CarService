@@ -11,7 +11,7 @@ Wheel::~Wheel() {
 
 }
 
-float Wheel::getHeightProtector() {
+int Wheel::getHeightProtector() {
     return height_protector;
 }
 

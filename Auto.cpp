@@ -38,12 +38,12 @@ const string &Auto::getModel() const {
 
 void Auto::GenerateWheel() {
     for (int i = 0; i < 4; i++) {
-        this->parts.wheel[i].setHeightProtector(Utils::GenerateInt(Utils::values.max_protector_height));
+        this->parts.wheel[i].setHeightProtector(Utils::GenerateInt(max_protector_height));
     }
 }
 
 void Auto::GenerateSteering() {
-    this->parts.steering.setBacklash(Utils::GenerateInt(Utils::values.max_backlash));
+    this->parts.steering.setBacklash(Utils::GenerateInt(max_backlash));
 }
 
 void Auto::GenerateHeadlights() {
@@ -51,12 +51,12 @@ void Auto::GenerateHeadlights() {
 }
 
 void Auto::GenerateFuelSystem() {
-    this->parts.fuel_system.setVolume(Utils::GenerateInt(Utils::values.max_volume));
+    this->parts.fuel_system.setVolume(Utils::GenerateInt(max_volume));
     this->parts.fuel_system.setIsSealed(Utils::GenerateBool());
 }
 
 void Auto::GenerateBrake() {
-    this->parts.brake.setSkewProcent(Utils::GenerateInt(Utils::values.max_skew));
+    this->parts.brake.setSkewProcent(Utils::GenerateInt(max_skew));
 }
 
 Auto::~Auto() {
@@ -83,4 +83,8 @@ void Auto::GetCarInfo() {
     cout << "Fuel system is sealed: " << this->getParts().fuel_system.getIsSealed() << " and volume:"<< this->getParts().fuel_system.getVolume()  << endl;
     cout << "Headlights is clean: " << this->getParts().headlights.getIsClean() << endl;
     cout << "Steering backlash: " << this->getParts().steering.getBacklash() << endl;
+}
+
+Auto* Auto::getObject() {
+    return this;
 }

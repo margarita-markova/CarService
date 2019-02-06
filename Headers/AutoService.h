@@ -16,7 +16,7 @@ class AutoService {
 private:
     bool isDetails;
     list <Auto> clients;
-    map<Auto, status> garage_journal;
+    map<Auto*, status> garage_journal;
 
 protected:
     bool getIsDetails() const;

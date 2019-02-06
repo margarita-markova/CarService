@@ -12,18 +12,17 @@
 
 using namespace std;
 
+static int min_backlash = 0;
+static int min_skew = 16;
+static int min_volume = 8;
+static int min_protector_height = 2;
+static int max_backlash = 10;
+static int max_skew = 40;
+static int max_volume = 100;
+static int max_protector_height = 10;
+
 class Utils {
 public:
-    static struct Values {
-        int min_backlash = 0;
-        int min_skew = 16;
-        int min_volume = 8;
-        int min_protector_height = 2;
-        int max_backlash = 10;
-        int max_skew = 40;
-        int max_volume = 100;
-        int max_protector_height = 10;
-    } values;
 
     static bool GenerateBool();
 

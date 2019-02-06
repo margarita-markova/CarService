@@ -14,26 +14,24 @@
 
 using namespace std;
 
-bool Utils::GenerateBool() { //date chet nechet
-    time_t timer;
-    time(&timer);
-    return timer % 2 == 0 ? false : true;
+bool Utils::GenerateBool() {
+    return GenerateInt(0, 1);
 }
 
 int Utils::GenerateInt(int border) {
-    srand(time(NULL));
-    return (rand() % border);
+    return GenerateInt(0, border);
 }
 
 int Utils::GenerateInt(int left, int right) {
-    srand(time(NULL));
-    return (rand() % right + left);
+    std::random_device rd;
+    std::uniform_int_distribution<int> distribution(left, right);
+    return distribution(rd);
 }
 
 void Utils::ConvertToJson(list<Auto> &garage) {
     auto it = garage.begin();
     ofstream myfile;
-    myfile.open("json.txt");
+    myfile.open("autoparts.json");
     myfile << "{ \n";
    while (it != garage.end()) {
        myfile << "\t{ \n";
@@ -62,7 +60,7 @@ void Utils::ConvertToJson(list<Auto> &garage) {
     myfile << "}";
     myfile.close();
     fstream in;
-    in.open("json.txt");
+    in.open("autoparts.json");
     string line;
     while(getline(in, line)) {
         cout << line << endl;
