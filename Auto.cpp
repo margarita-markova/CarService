@@ -18,7 +18,9 @@ Auto::AutoParts::~AutoParts() {
 
 }
 
-Auto::Auto(const string &color, int number, const string &model) : color(color), number(number), model(model) {}
+Auto::Auto(const string &color, int number, const string &model) : color(color), number(number), model(model) {
+    this->GenerateStruct();
+}
 
 Auto::AutoParts &Auto::getParts() {
     return parts;

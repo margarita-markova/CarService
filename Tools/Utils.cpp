@@ -10,7 +10,6 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-#include <chrono>
 
 using namespace std;
 
@@ -59,13 +58,19 @@ void Utils::ConvertToJson(list<Auto> &garage) {
    }
     myfile << "}";
     myfile.close();
-    fstream in;
-    in.open("autoparts.json");
-    string line;
-    while(getline(in, line)) {
-        cout << line << endl;
+    cout << "Конвертировано. Хотите увидеть содержание файла autoparts.json? Введите Y или y, если да" << endl;
+    char choice;
+    cin >> choice;
+    if (choice == 'Y' || choice == 'y') {
+
+        fstream in;
+        in.open("autoparts.json");
+        string line;
+        while (getline(in, line)) {
+            cout << line << endl;
+        }
+        in.close();
     }
-    in.close();
 }
 
 template<class T>

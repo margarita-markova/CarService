@@ -27,19 +27,27 @@ public:
 
     AutoService();
 
-    void InspectCar();
+    AutoService(char *filename);
+
+    list <Auto> &getClients();
+
+    void setClients(list <Auto> &clients);
+
+    void GetJournalNotes();
+
+    bool InspectCar();
 
     bool CheckDetails();
 
-    void RepairWheel(Auto &car, int num);
+    void RepairWheel(Auto *car, int num);
 
-    void RepairSteering(Auto &car);
+    void RepairSteering(Auto *car);
 
-    void RepairHeadlights(Auto &car);
+    void RepairHeadlights(Auto *car);
 
-    void RepairFuelSystem(Auto &car);
+    void RepairFuelSystem(Auto *car);
 
-    void RepairBrake(Auto &car);
+    void RepairBrake(Auto *car);
 
     virtual ~AutoService();
 };
