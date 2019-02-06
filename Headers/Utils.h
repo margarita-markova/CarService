@@ -23,7 +23,7 @@ static int max_skew = 40;
 static int max_volume = 100;
 static int max_protector_height = 10;
 
-static bool DEBUG_MODE = true;
+static bool DEBUG_MODE = false;
 
 class Utils {
 public:
